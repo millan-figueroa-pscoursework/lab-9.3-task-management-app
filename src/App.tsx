@@ -30,6 +30,11 @@ function App() {
       dueDate: "2024-01-02",
     },
   ]);
+  // filters state stores currently selected status and priority
+  const [filters, setFilters] = useState<{
+    status?: TaskStatus;
+    priority?: "low" | "medium" | "high";
+  }>({});
 
   // on status change, finds matching task by id and updates status
   const handleStatusChange = (taskId: string, newStatus: TaskStatus) => {
@@ -45,21 +50,35 @@ function App() {
     setTasks((prev) => prev.filter((task) => task.id !== taskId));
   };
 
-  // receives filters from TaskFilter (for now just logs them)
-  const handleFilterChange = (filters: {
+  // receives filters from TaskFilter and updates filter state
+  const handleFilterChange = (filtersUpdate: {
     status?: TaskStatus;
     priority?: "low" | "medium" | "high";
   }) => {
-    console.log("filter in app:", filters);
+    // merge new filters with existing ones so user can select both status and priority
+    setFilters((prev) => ({
+      ...prev,
+      ...filtersUpdate,
+    }));
+    // shows whats happening when filters r changed
+    console.log("filters received in app:", { ...filters, ...filtersUpdate });
   };
+
+  // apply filters before rendering the task list
+  // 1. if a filer value only include tasks that match it
+  // 2. if no filter set show all tasks for it
+  const filteredTasks = tasks.filter((task) => {
+    if (filters.status && task.status !== filters.status) return false;
+    if (filters.priority && task.priority !== filters.priority) return false;
+    return true; // include task if passes all filters
+  });
 
   return (
     <div className="min-h-screen bg-neutral-900 text-white p-8">
       <h1 className="text-3xl font-bold mb-6">My Tasks</h1>
-      {/* only logs selected filters for now */}
       <TaskFilter onFilterChange={handleFilterChange} />
       <TaskList
-        tasks={tasks}
+        tasks={filteredTasks}
         onStatusChange={handleStatusChange}
         onDelete={handleDelete}
       />
