@@ -7,25 +7,34 @@ export default function TaskFilter({ onFilterChange }: TaskFilterProps) {
     const value = e.target.value;
     // logs to confirm its wired properly
     console.log("status changed:", value);
-    // calls onFilterChange func and give it an empty object as plceholder
-    onFilterChange({});
+    // now sends a real filter object
+    onFilterChange({
+      // if the user selects 'all', it sends undefined (aka no filter)
+      status: value === "all" ? undefined : value,
+    });
   };
 
   // handler for priority filter dropdown
   const handlePriorityFilterChange = (e: any) => {
     const value = e.target.value;
-    console.log("Priority filter changed:", value);
-    // calls onFilterChange func and give it an empty object as plceholder
-    onFilterChange({});
+    console.log("priority filter changed:", value);
+    // now sends a real filter object
+    onFilterChange({
+      priority: value === "all" ? undefined : value,
+    });
   };
 
   return (
     // render filter dropdown menus
-    <div>
-      <div>
-        <label>
+    <div className="mb-4 flex flex-wrap items-center gap-4">
+      <div className="flex items-center gap-2">
+        <label className="text-sm text-gray-300">
           Status:
-          <select onChange={handleStatusFilterChange} defaultValue="all">
+          <select
+            onChange={handleStatusFilterChange}
+            defaultValue="all"
+            className="ml-2 rounded border border-gray-600 bg-neutral-900 px-2 py-1 text-sm text-gray-200"
+          >
             <option value="all">All</option>
             <option value="pending">Pending</option>
             <option value="in-progress">In Progress</option>
@@ -34,10 +43,14 @@ export default function TaskFilter({ onFilterChange }: TaskFilterProps) {
         </label>
       </div>
 
-      <div>
-        <label>
+      <div className="flex items-center gap-2">
+        <label className="text-sm text-gray-300">
           Priority:
-          <select onChange={handlePriorityFilterChange} defaultValue="all">
+          <select
+            onChange={handlePriorityFilterChange}
+            defaultValue="all"
+            className="ml-2 rounded border border-gray-600 bg-neutral-900 px-2 py-1 text-sm text-gray-200"
+          >
             <option value="all">All</option>
             <option value="low">Low</option>
             <option value="medium">Medium</option>

@@ -6,11 +6,11 @@
 
 ### 2. TaskItem Component
 
-[ ] Create a TaskItem component that displays individual task information.
+[x] Create a TaskItem component that displays individual task information.
 
 ### 3. TaskFilter Component
 
-[ ] Create a TaskFilter component that allows filtering tasks by status and priority.
+[x] Create a TaskFilter component that allows filtering tasks by status and priority.
 
 ## Activity Tasks
 
@@ -38,7 +38,7 @@ Implement each component according to its interface requirements.
 ### Component Composition:
 
 - [ ] Compose components to create a complete task management interface.
-- [ ] Handle prop passing between components.
+- [x] Handle prop passing between components.
 - [x] Implement proper event handling.
 
 ## Optional: One Step Further
