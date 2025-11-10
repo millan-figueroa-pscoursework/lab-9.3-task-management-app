@@ -20,12 +20,12 @@ Implement each component according to its interface requirements.
 
 - [x] Use proper TypeScript types and interfaces.
 - [x] Implement list rendering with unique keys.
-- [ ] Add conditional rendering based on task properties.
+- [x] Add conditional rendering based on task properties.
 
 ### List Management:
 
 - [x] Render the task list with proper key props.
-- [ ] Implement filtering functionality.
+- [x] Implement filtering functionality.
 - [x] Handle task status changes.
 - [x] Implement task deletion.
 
