@@ -2,7 +2,7 @@
 
 ### 1. TaskList Component
 
-[ ] Create a TaskList component that manages and displays a list of tasks.
+[x] Create a TaskList component that manages and displays a list of tasks.
 
 ### 2. TaskItem Component
 
@@ -18,16 +18,16 @@
 
 Implement each component according to its interface requirements.
 
-- [ ] Use proper TypeScript types and interfaces.
-- [ ] Implement list rendering with unique keys.
+- [x] Use proper TypeScript types and interfaces.
+- [x] Implement list rendering with unique keys.
 - [ ] Add conditional rendering based on task properties.
 
 ### List Management:
 
-- [ ] Render the task list with proper key props.
+- [x] Render the task list with proper key props.
 - [ ] Implement filtering functionality.
-- [ ] Handle task status changes.
-- [ ] Implement task deletion.
+- [x] Handle task status changes.
+- [x] Implement task deletion.
 
 ### Visual Feedback:
 
@@ -39,7 +39,7 @@ Implement each component according to its interface requirements.
 
 - [ ] Compose components to create a complete task management interface.
 - [ ] Handle prop passing between components.
-- [ ] Implement proper event handling.
+- [x] Implement proper event handling.
 
 ## Optional: One Step Further
 

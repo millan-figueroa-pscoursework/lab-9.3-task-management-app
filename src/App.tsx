@@ -14,17 +14,23 @@ function App() {
     },
   ]);
 
-  const handleStatusChange = () => {
-    return "status changed!";
+  // on status change, finds matching task by id and updates status
+  const handleStatusChange = (taskId: string, newStatus: TaskStatus) => {
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === taskId ? { ...task, status: newStatus } : task
+      )
+    );
   };
 
-  const handleDelete = () => {
-    return "deleted!";
+  // go thru list and makes new array w only tasks whose id do not match the one being deleted, new array replaces previous state
+  const handleDelete = (taskId: string) => {
+    setTasks((prev) => prev.filter((task) => task.id !== taskId));
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>My Tasks</h1>
+    <div className="min-h-screen bg-neutral-900 text-white p-8">
+      <h1 className="text-3xl font-bold mb-6">My Tasks</h1>
 
       <TaskList
         tasks={tasks}
