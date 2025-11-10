@@ -31,13 +31,13 @@ Implement each component according to its interface requirements.
 
 ### Visual Feedback:
 
-- [ ] Show different styles based on task status and priority.
-- [ ] Implement hover and active states.
-- [ ] Add visual indicators for task properties.
+- [x] Show different styles based on task status and priority.
+- [x] Implement hover and active states.
+- [x] Add visual indicators for task properties.
 
 ### Component Composition:
 
-- [ ] Compose components to create a complete task management interface.
+- [x] Compose components to create a complete task management interface.
 - [x] Handle prop passing between components.
 - [x] Implement proper event handling.
 
@@ -51,20 +51,10 @@ If you’re looking for a challenge, try to implement the following. If you find
 - [ ] Add a button to the TaskList component that adds a new task to the list. This will require adding some type of form for the user to input the task details.
 - [ ] Add buttons to the TaskItem component that allow the user to move the task up and down the list.
 
-## Reflection Questions
-
-#### How did you ensure unique keys for your list items?
-
-#### What considerations did you make when implementing the filtering functionality?
-
-#### How did you handle state updates for task status changes?
-
-#### What challenges did you face when implementing conditional rendering?
-
 ## Submission
 
 Submit your project via a GitHub repository using the Start Assignment link on Canvas. Your submission should include:
 
-- [ ] All component implementations
-- [ ] Example usage with documentation
-- [ ] A README.md file explaining how to use the components
+- [x] All component implementations
+- [x] Example usage with documentation
+- [x] A README.md file explaining how to use the components

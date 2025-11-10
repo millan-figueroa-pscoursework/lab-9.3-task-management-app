@@ -1,17 +1,39 @@
 ### Lab 9.3: Event Handling
 
-# Lists, Keys, and Conditionals
+# Task Manager App
 
-## Lab Overview
+A simple task manager built with React, TypeScript, and Tailwind CSS.  
+It lets you view, filter, update, and delete tasks in a clean and responsive interface.
 
-In this lab, you will create a Task Management application that demonstrates dynamic list rendering, proper key usage, and conditional rendering. You will practice creating TypeScript React components that handle lists of data, implement filtering, and show different states based on task properties. This lab focuses on list rendering, key management, conditional rendering, and component composition using React and TypeScript.
+## Features
 
-## Objectives
+- View a list of tasks with title, description, priority, and due date
+- Change task status using a dropdown
+- Delete tasks from the list
+- Filter tasks by status and priority
+- Visual styles change based on task status and priority
 
-By the end of this lab, you will:
+## Tech Stack
 
-- Create components that render lists of data with proper key management.
-- Implement filtering and sorting of list items.
-- Use conditional rendering to show different states based on item properties.
-- Apply TypeScript interfaces for type safety.
-- Implement proper component composition and prop handling.
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+
+## Reflection Questions
+
+#### How did you ensure unique keys for your list items?
+
+I made sure each task had its own unique id and used that as the key when mapping through the list. This keeps React from getting confused when tasks change as well as avoid rendering bugs.
+
+#### What considerations did you make when implementing the filtering functionality?
+
+I used a simple approach so each dropdown updates only part of the filter state, and then the app filters tasks before rendering. I also added lots of sanity checks to confirm that components were communicating properly before working on any logic. Having a routine set as I build more apps makes the process faster, consistency has been really helpful like making sure everything is connected and push to the repo frequently.
+
+#### How did you handle state updates for task status changes?
+
+I used a state updater function that mapped through the tasks and replaced only the one that matched the id to make sure the UI re-rendered properly. More clean and predictable to manage updates this way.
+
+#### What challenges did you face when implementing conditional rendering?
+
+It helped to break down logic and use placeholders to figure things out piece by piece. I struggled with typing the priority filter dropdown handler props with “any,” and if I had more time I would avoid using the “any” type. Most of the challenges were about properly typing everything.
